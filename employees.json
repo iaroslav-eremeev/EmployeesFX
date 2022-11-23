@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Mark",
+    "surname": "Black",
+    "experience": 3,
+    "job": "project_manager"
+  },
+  {
+    "name": "Richard",
+    "surname": "Green",
+    "experience": 6,
+    "job": "tester"
+  },
+  {
+    "name": "Peter",
+    "surname": "Smith",
+    "experience": 6,
+    "job": "developer"
+  },
+  {
+    "name": "Peter",
+    "surname": "Simpson",
+    "experience": 5,
+    "job": "project_manager"
+  },
+  {
+    "name": "Kate",
+    "surname": "Smith",
+    "experience": 8,
+    "job": "designer"
+  },
+  {
+    "name": "David",
+    "surname": "Black",
+    "experience": 8,
+    "job": "tester"
+  },
+  {
+    "name": "Richard",
+    "surname": "Simpson",
+    "experience": 2,
+    "job": "developer"
+  },
+  {
+    "name": "Richard",
+    "surname": "Smith",
+    "experience": 4,
+    "job": "tester"
+  }
+]
