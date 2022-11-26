@@ -16,22 +16,25 @@ import java.util.HashMap;
 public class MainController {
     @FXML
     public ComboBox<Employee> employeesRepoComboBox;
-
-    public ArrayList<Employee> employeesInComboBox;
     public Button buttonEmployeeChosen;
-    public ListView chosenDevsList;
-    public ListView chosenTestersList;
-    public ListView chosenDesignersList;
-    public ListView chosenManagersList;
+    public ListView<Employee> chosenDevsList;
+    public ListView<Employee> chosenTestersList;
+    public ListView<Employee> chosenDesignersList;
+    public ListView<Employee> chosenManagersList;
 
     public EmployeesRepo resRepo = new EmployeesRepo();
-    public HashMap<String, ArrayList<Employee>> employeesHashMap = new HashMap<>();
+    private HashMap<String, ArrayList<Employee>> employeesHashMap = new HashMap<>();
+
+    private HashMap<String, ListView<Employee>> listViewHashMap = new HashMap<>();
 
     @FXML
     public void initialize() throws IOException {
         EmployeesRepo employeesRepo = new EmployeesRepo("employees.json");
-        this.employeesInComboBox = employeesRepo.getEmployees();
-        this.employeesRepoComboBox.setItems(FXCollections.observableList(this.employeesInComboBox));
+        this.employeesRepoComboBox.setItems(FXCollections.observableList(employeesRepo.getEmployees()));
+        this.listViewHashMap.put("developer", chosenDevsList);
+        this.listViewHashMap.put("project_manager", chosenManagersList);
+        this.listViewHashMap.put("designer", chosenDesignersList);
+        this.listViewHashMap.put("tester", chosenTestersList);
     }
 
     @FXML
@@ -53,29 +56,11 @@ public class MainController {
         this.employeesHashMap.computeIfAbsent(selectedEmployee.getJob(), k -> new ArrayList<>())
                 .add(selectedEmployee);
         this.resRepo.addEmployee(selectedEmployee);
-        this.employeesInComboBox.remove(selectedEmployee);
-        this.employeesRepoComboBox.setItems(FXCollections.observableList(this.employeesInComboBox));
-        if (this.employeesHashMap.get("developer") != null){
-            this.chosenDevsList.getItems().clear();
-            this.chosenDevsList.getItems().add(getEmployeesByJob(this.employeesHashMap, "developer"));
-        }
-        if (this.employeesHashMap.get("project_manager") != null){
-            this.chosenManagersList.getItems().clear();
-            this.chosenManagersList.getItems().add(getEmployeesByJob(this.employeesHashMap, "project_manager"));
-        }
-        if (this.employeesHashMap.get("designer") != null){
-            this.chosenDesignersList.getItems().clear();
-            this.chosenDesignersList.getItems().add(getEmployeesByJob(this.employeesHashMap, "designer"));
-        }
-        if (this.employeesHashMap.get("tester") != null){
-            this.chosenTestersList.getItems().clear();
-            this.chosenTestersList.getItems().add(getEmployeesByJob(this.employeesHashMap, "tester"));
-        }
+        this.employeesRepoComboBox.getItems().remove(selectedEmployee);
+        this.listViewHashMap.get(selectedEmployee.getJob()).getItems().add(selectedEmployee);
     }
 
-    public String getEmployeesByJob(HashMap<String, ArrayList<Employee>> map, String job){
-        ArrayList<Employee> employees = map.get(job);
-        return employees.toString().replaceAll("\\[|\\]", "")
-                .replaceAll("experience\n, ", "experience\n");
+    public ArrayList<Employee> getEmployeesByJob(HashMap<String, ArrayList<Employee>> map, String job){
+        return map.get(job);
     }
 }
