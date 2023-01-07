@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="EmployeesFX:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfb31832-c496-4b9a-a436-a29d0214d26b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Build/src/main/java/program/Program.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Build/src/main/java/util/Util.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Build/src/main/resources/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/EmployeesFX_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iaroslaveremeev/employeesfx/Program.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaEE/Servlets/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaEE/Servlets/src/main/java/com/kirillkotov/servlets/MainServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaEE/TestServlets/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaEE/TestServlets/src/main/java/com/kirillkotov/servlets/Test.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Xml/tv.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/iaroslaveremeev/employeesfx/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iaroslaveremeev/employeesfx/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/iaroslaveremeev/employeesfx/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iaroslaveremeev/employeesfx/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GalaxyXML/src/main/java/iaroslav/eremeev/program/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GalaxyXML/src/main/java/iaroslav/eremeev/program/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../UsersFX/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../UsersFX/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../UsersFX/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../UsersFX/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../UsersFX/src/main/java/com/iaroslaveremeev/usersfx/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../UsersFX/src/main/java/com/iaroslaveremeev/usersfx/App.java" afterDir="false" />
@@ -43,16 +57,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/iaroslav.eremeev/IdeaProjects/EmployeesFX/src/main/resources/com/iaroslaveremeev/employeesfx&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/tirsb/IdeaProjects/EmployeesFX/out/artifacts/EmployeesFX_jar",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tirsb\IdeaProjects\EmployeesFX\out\artifacts\EmployeesFX_jar" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/iaroslaveremeev/employeesfx" />
       <recent name="$PROJECT_DIR$" />
     </key>

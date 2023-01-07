@@ -1,0 +1,37 @@
+<component name="ArtifactManager">
+  <artifact name="EmployeesFX:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/EmployeesFX_jar</output-path>
+    <root id="root">
+      <element id="archive" name="EmployeesFX.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+        <element id="module-output" name="EmployeesFX" />
+      </element>
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-fxml:19-ea+7" />
+      <element id="library" level="project" name="Maven: io.netty:netty-buffer:4.1.30.Final" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-base:19-ea+7" />
+      <element id="library" level="project" name="Maven: io.netty:netty-handler-proxy:4.1.30.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-transport:4.1.30.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-codec-socks:4.1.30.Final" />
+      <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.12.1" />
+      <element id="library" level="project" name="Maven: io.netty:netty-handler:4.1.30.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-codec:4.1.30.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-resolver:4.1.30.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-codec-http2:4.1.30.Final" />
+      <element id="library" level="project" name="Maven: io.vertx:vertx-core:3.6.3" />
+      <element id="library" level="project" name="Maven: io.netty:netty-common:4.1.30.Final" />
+      <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.12.1" />
+      <element id="library" level="project" name="Maven: io.netty:netty-codec-dns:4.1.30.Final" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-controls:win:19-ea+7" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-fxml:win:19-ea+7" />
+      <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.12.1" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-controls:19-ea+7" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-graphics:19-ea+7" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-graphics:win:19-ea+7" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-base:win:19-ea+7" />
+      <element id="library" level="project" name="Maven: io.netty:netty-resolver-dns:4.1.30.Final" />
+      <element id="library" level="project" name="Maven: io.netty:netty-codec-http:4.1.30.Final" />
+    </root>
+  </artifact>
+</component>
