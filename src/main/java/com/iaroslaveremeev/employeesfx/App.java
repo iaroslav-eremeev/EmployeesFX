@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 public class App extends Application {
@@ -14,7 +15,15 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        Scene scene = new Scene(loadFXML("main"), 500, 750);
+        Scene scene = new Scene(loadFXML("main"), 500, 300);
+        stage.setTitle("Open the needed file to start!");
+        stage.setScene(scene);
+        stage.show();
+
+    }
+
+    public void openJsonFile(Stage stage, File file) throws IOException {
+        Scene scene = new Scene(loadFXML(file.getName()), 500, 750);
         stage.setTitle("Fill the lists of employees!");
         stage.setScene(scene);
         stage.show();

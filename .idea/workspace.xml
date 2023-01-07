@@ -20,7 +20,9 @@
       <change afterPath="$PROJECT_DIR$/../JavaEE/TestServlets/src/main/java/com/kirillkotov/servlets/Test.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Xml/tv.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iaroslaveremeev/employeesfx/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iaroslaveremeev/employeesfx/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/iaroslaveremeev/employeesfx/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iaroslaveremeev/employeesfx/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/iaroslaveremeev/employeesfx/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/iaroslaveremeev/employeesfx/main.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../JavaFXApplication/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaFXApplication/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../UsersFX/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../UsersFX/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../UsersFX/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../UsersFX/.idea/workspace.xml" afterDir="false" />
@@ -73,6 +75,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.iaroslaveremeev.employeesfx" />
       <recent name="com.iaroslaveremeev.employeesfx.repository" />
       <recent name="com.iaroslaveremeev.employeesfx.model" />
     </key>
