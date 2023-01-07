@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,16 +39,21 @@ public class MainController {
     }
 
     @FXML
-    public void buttonFileOpen(ActionEvent actionEvent) {
+    public File buttonFileOpen(ActionEvent actionEvent) throws FileNotFoundException {
         FileChooser fileChooser = new FileChooser();
+        fileChooser.setInitialDirectory(new File("C:\\Users\\tirsb\\IdeaProjects\\EmployeesFX"));
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter(
-                "TXT files", "*.txt", "*.TXT"));
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter(
-                "CSV files", "*.csv", "*.CSV"));
+                "JSON files", "*.json", "*.JSON"));
         File file = fileChooser.showOpenDialog(null);
-        if(file != null){
-            System.out.println(file);
+        try  {
+            if(file != null){
+                return file;
+            }
+            else throw new FileNotFoundException();
+        } catch (FileNotFoundException e) {
+            App.showAlertWithoutHeaderText("Error!", "You didn't chose any file", Alert.AlertType.ERROR);
         }
+        return null;
     }
 
     public void onButtonEmployeeChosenClick(ActionEvent actionEvent) {
