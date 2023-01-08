@@ -19,6 +19,8 @@ import javafx.stage.StageStyle;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 public class EmployeeListsController {
     @FXML
@@ -30,7 +32,6 @@ public class EmployeeListsController {
     public ListView<Employee> chosenManagersList;
     public EmployeesRepo resRepo = new EmployeesRepo();
     private HashMap<String, ArrayList<Employee>> employeesHashMap = new HashMap<>();
-
     private HashMap<String, ListView<Employee>> listViewHashMap = new HashMap<>();
 
     @FXML
@@ -42,6 +43,17 @@ public class EmployeeListsController {
         this.listViewHashMap.put("designer", chosenDesignersList);
         this.listViewHashMap.put("tester", chosenTestersList);
     }
+
+    /*public void transferContent(HashMap<String, ArrayList<Employee>> employeesHashMap, EmployeesRepo resRepo,
+                                ListView<Employee> chosenDevsList, ListView<Employee> chosenDesignersList,
+                                ListView<Employee> chosenTestersList, ListView<Employee> chosenManagersList) throws IOException {
+        this.employeesHashMap = employeesHashMap;
+        this.resRepo = resRepo;
+        this.chosenDevsList = chosenDevsList;
+        this.chosenDesignersList = chosenDesignersList;
+        this.chosenTestersList = chosenTestersList;
+        this.chosenManagersList = chosenManagersList;
+    }*/
 
     @FXML
     public void buttonFileOpen(ActionEvent actionEvent) throws FileNotFoundException {
@@ -57,7 +69,14 @@ public class EmployeeListsController {
                 Stage stage = new Stage(StageStyle.DECORATED);
                 stage.setScene(new Scene(fxmlLoader.load(), 500, 750));
                 EmployeeListsController employeeListsController = fxmlLoader.getController();
-                employeeListsController.initialize(file);
+                if (this.listViewHashMap != null){
+                    /*employeeListsController.transferContent(this.employeesHashMap, this.resRepo, this.chosenDevsList,
+                            this.chosenDesignersList, this.chosenTestersList, this.chosenManagersList);*/
+                    employeeListsController.initialize(file);
+                }
+                else {
+                    employeeListsController.initialize(file);
+                }
                 stage.show();
                 Stage close = (Stage) this.employeesRepoComboBox.getScene().getWindow();
                 close.close();
