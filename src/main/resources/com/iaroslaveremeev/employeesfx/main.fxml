@@ -30,7 +30,7 @@
     </MenuBar>
 
     <Label fx:id="welcomeText" />
-    <Label alignment="CENTER" prefHeight="27.0" prefWidth="476.0" text="You must open a .json file to start" textAlignment="CENTER">
+    <Label fx:id="MainLabel" alignment="CENTER" prefHeight="27.0" prefWidth="476.0" text="You must open a .json file to start" textAlignment="CENTER">
         <font>
             <Font size="24.0" />
         </font>

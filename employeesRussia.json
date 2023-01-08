@@ -1,0 +1,80 @@
+[
+  {
+    "name": "Dmitry",
+    "surname": "Dumov",
+    "experience": 5,
+    "job": "developer"
+  },
+  {
+    "name": "Alexey",
+    "surname": "Chistyakov",
+    "experience": 2,
+    "job": "developer"
+  },
+  {
+    "name": "Petr",
+    "surname": "Stepanov",
+    "experience": 3,
+    "job": "tester"
+  },
+  {
+    "name": "Oleg",
+    "surname": "Semenov",
+    "experience": 7,
+    "job": "developer"
+  },
+  {
+    "name": "Katerina",
+    "surname": "Simonova",
+    "experience": 1,
+    "job": "designer"
+  },
+  {
+    "name": "Yulia",
+    "surname": "Popova",
+    "experience": 3,
+    "job": "project_manager"
+  },
+  {
+    "name": "Aslan",
+    "surname": "Khudarbaev",
+    "experience": 5,
+    "job": "designer"
+  },
+  {
+    "name": "Sviatoslav",
+    "surname": "Revyakin",
+    "experience": 6,
+    "job": "developer"
+  },
+  {
+    "name": "Igor",
+    "surname": "Skryabin",
+    "experience": 3,
+    "job": "tester"
+  },
+  {
+    "name": "Anna",
+    "surname": "Prokopenko",
+    "experience": 1,
+    "job": "tester"
+  },
+  {
+    "name": "Sergey",
+    "surname": "Zaitsev",
+    "experience": 4,
+    "job": "project_manager"
+  },
+  {
+    "name": "Arkadiy",
+    "surname": "Lomonosov",
+    "experience": 8,
+    "job": "project_manager"
+  },
+  {
+    "name": "Olga",
+    "surname": "Belykh",
+    "experience": 5,
+    "job": "designer"
+  }
+]

@@ -19,14 +19,6 @@ public class App extends Application {
         stage.setTitle("Open the needed file to start!");
         stage.setScene(scene);
         stage.show();
-
-    }
-
-    public void openJsonFile(Stage stage, File file) throws IOException {
-        Scene scene = new Scene(loadFXML(file.getName()), 500, 750);
-        stage.setTitle("Fill the lists of employees!");
-        stage.setScene(scene);
-        stage.show();
     }
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
