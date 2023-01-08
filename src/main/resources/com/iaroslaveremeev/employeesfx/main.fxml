@@ -19,7 +19,7 @@
                             <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                         </accelerator>
                     </MenuItem>
-                    <MenuItem mnemonicParsing="false" text="Save">
+                    <MenuItem mnemonicParsing="false" onAction="#buttonSaveFile" text="Save">
                         <accelerator>
                             <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                         </accelerator>

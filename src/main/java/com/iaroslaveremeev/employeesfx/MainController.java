@@ -17,8 +17,7 @@ public class MainController {
     @FXML
     public Label MainLabel;
 
-    public void initialize() throws IOException {
-    }
+    public void initialize() throws IOException {}
 
     @FXML
     public void buttonFileOpen(ActionEvent actionEvent) throws FileNotFoundException {
@@ -45,5 +44,9 @@ public class MainController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void buttonSaveFile(ActionEvent actionEvent) {
+        App.showAlertWithoutHeaderText("Error!", "You didn't chose any file", Alert.AlertType.ERROR);
     }
 }

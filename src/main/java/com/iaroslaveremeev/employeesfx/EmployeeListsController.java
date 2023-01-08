@@ -1,5 +1,6 @@
 package com.iaroslaveremeev.employeesfx;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.iaroslaveremeev.employeesfx.model.Employee;
 import com.iaroslaveremeev.employeesfx.repository.EmployeesRepo;
 import javafx.collections.FXCollections;
@@ -15,9 +16,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -71,17 +70,45 @@ public class EmployeeListsController {
         }
     }
 
-    public void onButtonEmployeeChosenClick(ActionEvent actionEvent) {
-        Employee selectedEmployee = this.employeesRepoComboBox.getSelectionModel().getSelectedItem();
-        this.employeesHashMap.getOrDefault(selectedEmployee.getJob(), new ArrayList<>());
-        this.employeesHashMap.computeIfAbsent(selectedEmployee.getJob(), k -> new ArrayList<>())
-                .add(selectedEmployee);
-        this.resRepo.addEmployee(selectedEmployee);
-        this.employeesRepoComboBox.getItems().remove(selectedEmployee);
-        this.listViewHashMap.get(selectedEmployee.getJob()).getItems().add(selectedEmployee);
+    public void buttonSaveFile(ActionEvent actionEvent) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setInitialDirectory(new File("C:\\Users\\tirsb\\IdeaProjects\\EmployeesFX"));
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter(
+                "JSON files", "*.json", "*.JSON"));
+        File file = fileChooser.showSaveDialog(null);
+        try {
+            if (file != null) {
+                ObjectMapper objectMapper = new ObjectMapper();
+                String filename = file.getName();
+                try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filename))) {
+                    ArrayList<Employee> chosenEmployees = new ArrayList<>();
+                    chosenEmployees.addAll(this.employeesHashMap.get("developer"));
+                    chosenEmployees.addAll(this.employeesHashMap.get("designer"));
+                    chosenEmployees.addAll(this.employeesHashMap.get("tester"));
+                    chosenEmployees.addAll(this.employeesHashMap.get("project_manager"));
+                    objectMapper.writeValue(bufferedWriter, chosenEmployees);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            } else throw new FileNotFoundException();
+        } catch (FileNotFoundException e) {
+            App.showAlertWithoutHeaderText("Error!", "You didn't chose any file", Alert.AlertType.ERROR);
+        }
     }
 
-    public ArrayList<Employee> getEmployeesByJob(HashMap<String, ArrayList<Employee>> map, String job){
-        return map.get(job);
+    public void onButtonEmployeeChosenClick(ActionEvent actionEvent) {
+        try {
+            Employee selectedEmployee = this.employeesRepoComboBox.getSelectionModel().getSelectedItem();
+            this.employeesHashMap.getOrDefault(selectedEmployee.getJob(), new ArrayList<>());
+            this.employeesHashMap.computeIfAbsent(selectedEmployee.getJob(), k -> new ArrayList<>())
+                    .add(selectedEmployee);
+            this.resRepo.addEmployee(selectedEmployee);
+            this.employeesRepoComboBox.getItems().remove(selectedEmployee);
+            this.listViewHashMap.get(selectedEmployee.getJob()).getItems().add(selectedEmployee);
+        }
+        catch (NullPointerException np){
+            App.showAlertWithoutHeaderText("Error!", "You didn't chose any employee. Try again",
+                    Alert.AlertType.ERROR);
+        }
     }
 }
