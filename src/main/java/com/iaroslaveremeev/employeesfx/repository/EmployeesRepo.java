@@ -39,6 +39,11 @@ public class EmployeesRepo {
         this.employees.add(employee);
     }
 
+    public Employee removeEmployee(Employee employee) {
+        this.employees.remove(employee);
+        return employee;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

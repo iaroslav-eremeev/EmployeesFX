@@ -21,7 +21,8 @@
       <change afterPath="$PROJECT_DIR$/../Xml/tv.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/iaroslaveremeev/employeesfx/EmployeeListsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iaroslaveremeev/employeesfx/EmployeeListsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/iaroslaveremeev/employeesfx/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iaroslaveremeev/employeesfx/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iaroslaveremeev/employeesfx/repository/EmployeesRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iaroslaveremeev/employeesfx/repository/EmployeesRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/iaroslaveremeev/employeesfx/employeeLists.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/iaroslaveremeev/employeesfx/employeeLists.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../JavaFXApplication/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaFXApplication/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../JavaFXApplication/target/classes/com/kirillkotov/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaFXApplication/target/classes/com/kirillkotov/main.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../UsersFX/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../UsersFX/.idea/misc.xml" afterDir="false" />

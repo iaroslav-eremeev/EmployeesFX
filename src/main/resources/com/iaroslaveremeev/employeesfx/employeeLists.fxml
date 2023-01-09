@@ -8,7 +8,9 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -47,14 +49,53 @@
             <Insets />
         </VBox.margin>
     </Label>
-   <Label text="Developers" />
-   <ListView fx:id="chosenDevsList" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-   <Label text="Designers" />
-   <ListView fx:id="chosenDesignersList" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-   <Label text="Testers" />
-   <ListView fx:id="chosenTestersList" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+   <Separator prefWidth="200.0" />
+   <Label text="Developers">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+   <HBox alignment="CENTER">
+      <children>
+         <Button fx:id="showAllDevelopers" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showAllDevelopers" text="Show all developers">
+            <HBox.margin>
+               <Insets left="25.0" right="25.0" />
+            </HBox.margin>
+         </Button>
+         <Button fx:id="deleteAllDevelopers" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#deleteAllDevelopers" text="Delete all developers">
+            <HBox.margin>
+               <Insets left="25.0" right="25.0" />
+            </HBox.margin>
+         </Button>
+      </children>
+   </HBox>
+   <ListView fx:id="chosenDevsList" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+      <VBox.margin>
+         <Insets left="50.0" right="50.0" />
+      </VBox.margin>
+   </ListView>
+   <Separator prefWidth="200.0" />
+   <Label text="Designers">
+      <font>
+         <Font size="14.0" />
+      </font></Label>
+   <ListView fx:id="chosenDesignersList" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+      <VBox.margin>
+         <Insets left="50.0" right="50.0" />
+      </VBox.margin></ListView>
+   <Label text="Testers">
+      <font>
+         <Font size="14.0" />
+      </font></Label>
+   <ListView fx:id="chosenTestersList" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+      <VBox.margin>
+         <Insets left="50.0" right="50.0" />
+      </VBox.margin></ListView>
    <Label text="Managers" />
-   <ListView fx:id="chosenManagersList" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+   <ListView fx:id="chosenManagersList" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+      <VBox.margin>
+         <Insets left="50.0" right="50.0" />
+      </VBox.margin></ListView>
 
     <Label fx:id="welcomeText" />
 </VBox>
