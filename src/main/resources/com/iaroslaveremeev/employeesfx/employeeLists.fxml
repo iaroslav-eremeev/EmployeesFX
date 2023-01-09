@@ -57,12 +57,12 @@
    </Label>
    <HBox alignment="CENTER">
       <children>
-         <Button fx:id="showAllDevelopers" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showAllDevelopers" text="Show all developers">
+         <Button fx:id="showAllDevelopers" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showAll" text="Show all developers">
             <HBox.margin>
                <Insets left="25.0" right="25.0" />
             </HBox.margin>
          </Button>
-         <Button fx:id="deleteAllDevelopers" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#deleteAllDevelopers" text="Delete all developers">
+         <Button fx:id="deleteAllDevelopers" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#deleteAll" text="Delete all developers">
             <HBox.margin>
                <Insets left="25.0" right="25.0" />
             </HBox.margin>

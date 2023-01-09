@@ -7,13 +7,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.*;
 import java.util.*;
@@ -90,51 +87,57 @@ public class EmployeeListsController {
     }
 
     public void onButtonEmployeeChosenClick(ActionEvent actionEvent) {
-        /*try {*/
+        try {
             Employee selectedEmployee = this.employeesRepoComboBox.getSelectionModel().getSelectedItem();
-            /*if (selectedEmployee != null){
-                App.showAlertWithoutHeaderText("Info!", "selectedEmployee is not null",
-                        Alert.AlertType.INFORMATION);
-            }*/
             this.employeesHashMap.getOrDefault(selectedEmployee.getJob(), new ArrayList<>());
             this.employeesHashMap.computeIfAbsent(selectedEmployee.getJob(), k -> new ArrayList<>())
                     .add(selectedEmployee);
             this.resRepo.addEmployee(selectedEmployee);
             this.employeesRepoComboBox.getItems().remove(selectedEmployee);
             this.listViewHashMap.get(selectedEmployee.getJob()).getItems().add(selectedEmployee);
-        /*}
+        }
         catch (NullPointerException np){
             App.showAlertWithoutHeaderText("Error!", "You didn't chose any employee. Try again",
                     Alert.AlertType.ERROR);
-        }*/
+        }
     }
 
-    public void showAllDevelopers(ActionEvent actionEvent) {
-        StringBuilder developersToShow = new StringBuilder();
-        developersToShow.append("These are the developers that you chose for your team:\n\n");
-        for (int i = 0; i < this.chosenDevsList.getItems().size(); i++) {
-            developersToShow.append(i + 1).append(". ").append(this.chosenDevsList.getItems().get(i).toString());
+    public void showAll(ActionEvent actionEvent) {
+        String id = ((Node) actionEvent.getSource()).getId();
+        if (id.equals("showAllDevelopers")) showAllEmployees(this.chosenDevsList, "developers");
+    }
+    public void showAllEmployees(ListView<Employee> listView, String employees){
+        StringBuilder toShow = new StringBuilder();
+        toShow.append("These are the" + employees + " that you chose for your team:\n\n");
+        for (int i = 0; i < listView.getItems().size(); i++) {
+            toShow.append(i + 1).append(". ").append(listView.getItems().get(i).toString());
         }
-        App.showAlertWithoutHeaderText("Developers", developersToShow.toString(),
+        App.showAlertWithoutHeaderText(employees.toUpperCase(), toShow.toString(),
                 Alert.AlertType.INFORMATION);
     }
 
-    public void deleteAllDevelopers(ActionEvent actionEvent) {
+    public void deleteAll(ActionEvent actionEvent) {
+        String id = ((Node) actionEvent.getSource()).getId();
+        if (id.equals("deleteAllDevelopers")) deleteAllEmployees(this.chosenDevsList, "developers",
+                this.resRepo, this.employeesRepoComboBox);
+    }
+    public void deleteAllEmployees(ListView<Employee> listView, String employees,
+                                   EmployeesRepo resRepo, ComboBox<Employee> comboBox){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.initModality(Modality.WINDOW_MODAL);
-        alert.setTitle("Deleting developers");
-        alert.setHeaderText("Please confirm deleting all developers");
+        alert.setTitle("Deleting " + employees);
+        alert.setHeaderText("Please confirm deleting all " + employees);
         alert.setContentText("The employees you deleted will return to the list");
         Optional<ButtonType> result = alert.showAndWait();
         if(result.isPresent() && result.get() == ButtonType.OK) {
-            for (int i = 0; i < this.chosenDevsList.getItems().size(); i++) {
-                Employee employee = this.chosenDevsList.getItems().get(i);
-                this.resRepo.removeEmployee(employee);
-                ObservableList<Employee> comboBoxEmployees = this.employeesRepoComboBox.getItems();
+            for (int i = 0; i < listView.getItems().size(); i++) {
+                Employee employee = listView.getItems().get(i);
+                resRepo.removeEmployee(employee);
+                ObservableList<Employee> comboBoxEmployees = comboBox.getItems();
                 comboBoxEmployees.add(employee);
-                this.employeesRepoComboBox.setItems(comboBoxEmployees);
+                comboBox.setItems(comboBoxEmployees);
             }
-            this.chosenDevsList.getItems().clear();
+            listView.getItems().clear();
         }
     }
 }
