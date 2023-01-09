@@ -33,7 +33,7 @@ public class MainController {
                 Stage stage = new Stage(StageStyle.DECORATED);
                 stage.setScene(new Scene(fxmlLoader.load(), 500, 750));
                 EmployeeListsController employeeListsController = fxmlLoader.getController();
-                employeeListsController.initialize(file);
+                employeeListsController.initializeComboBox(file);
                 stage.show();
                 Stage close = (Stage) this.MainLabel.getScene().getWindow();
                 close.close();

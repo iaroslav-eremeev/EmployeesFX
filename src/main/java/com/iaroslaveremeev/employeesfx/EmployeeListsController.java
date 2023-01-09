@@ -35,25 +35,18 @@ public class EmployeeListsController {
     private HashMap<String, ListView<Employee>> listViewHashMap = new HashMap<>();
 
     @FXML
-    public void initialize(File file) throws IOException {
-        EmployeesRepo employeesRepo = new EmployeesRepo(file.getAbsolutePath());
-        this.employeesRepoComboBox.setItems(FXCollections.observableList(employeesRepo.getEmployees()));
+    void initialize(){
         this.listViewHashMap.put("developer", chosenDevsList);
         this.listViewHashMap.put("project_manager", chosenManagersList);
         this.listViewHashMap.put("designer", chosenDesignersList);
         this.listViewHashMap.put("tester", chosenTestersList);
     }
 
-    /*public void transferContent(HashMap<String, ArrayList<Employee>> employeesHashMap, EmployeesRepo resRepo,
-                                ListView<Employee> chosenDevsList, ListView<Employee> chosenDesignersList,
-                                ListView<Employee> chosenTestersList, ListView<Employee> chosenManagersList) throws IOException {
-        this.employeesHashMap = employeesHashMap;
-        this.resRepo = resRepo;
-        this.chosenDevsList = chosenDevsList;
-        this.chosenDesignersList = chosenDesignersList;
-        this.chosenTestersList = chosenTestersList;
-        this.chosenManagersList = chosenManagersList;
-    }*/
+    public void initializeComboBox(File file) throws IOException {
+        EmployeesRepo employeesRepo = new EmployeesRepo(file.getAbsolutePath());
+        this.employeesRepoComboBox.setItems(FXCollections.observableList(employeesRepo.getEmployees()));
+    }
+
 
     @FXML
     public void buttonFileOpen(ActionEvent actionEvent) throws FileNotFoundException {
@@ -64,22 +57,7 @@ public class EmployeeListsController {
         File file = fileChooser.showOpenDialog(null);
         try  {
             if(file != null){
-                FXMLLoader fxmlLoader = new FXMLLoader(
-                        getClass().getResource("employeeLists.fxml"));
-                Stage stage = new Stage(StageStyle.DECORATED);
-                stage.setScene(new Scene(fxmlLoader.load(), 500, 750));
-                EmployeeListsController employeeListsController = fxmlLoader.getController();
-                if (this.listViewHashMap != null){
-                    /*employeeListsController.transferContent(this.employeesHashMap, this.resRepo, this.chosenDevsList,
-                            this.chosenDesignersList, this.chosenTestersList, this.chosenManagersList);*/
-                    employeeListsController.initialize(file);
-                }
-                else {
-                    employeeListsController.initialize(file);
-                }
-                stage.show();
-                Stage close = (Stage) this.employeesRepoComboBox.getScene().getWindow();
-                close.close();
+                initializeComboBox(file);
             }
             else throw new FileNotFoundException();
         } catch (FileNotFoundException e) {
