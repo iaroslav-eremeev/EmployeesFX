@@ -105,10 +105,13 @@ public class EmployeeListsController {
     public void showAll(ActionEvent actionEvent) {
         String id = ((Node) actionEvent.getSource()).getId();
         if (id.equals("showAllDevelopers")) showAllEmployees(this.chosenDevsList, "developers");
+        if (id.equals("showAllDesigners")) showAllEmployees(this.chosenDesignersList, "designers");
+        if (id.equals("showAllTesters")) showAllEmployees(this.chosenTestersList, "testers");
+        if (id.equals("showAllManagers")) showAllEmployees(this.chosenManagersList, "managers");
     }
     public void showAllEmployees(ListView<Employee> listView, String employees){
         StringBuilder toShow = new StringBuilder();
-        toShow.append("These are the" + employees + " that you chose for your team:\n\n");
+        toShow.append("These are the " + employees + " that you chose for your team:\n\n");
         for (int i = 0; i < listView.getItems().size(); i++) {
             toShow.append(i + 1).append(". ").append(listView.getItems().get(i).toString());
         }
@@ -119,6 +122,12 @@ public class EmployeeListsController {
     public void deleteAll(ActionEvent actionEvent) {
         String id = ((Node) actionEvent.getSource()).getId();
         if (id.equals("deleteAllDevelopers")) deleteAllEmployees(this.chosenDevsList, "developers",
+                this.resRepo, this.employeesRepoComboBox);
+        if (id.equals("deleteAllDesigners")) deleteAllEmployees(this.chosenDesignersList, "designers",
+                this.resRepo, this.employeesRepoComboBox);
+        if (id.equals("deleteAllTesters")) deleteAllEmployees(this.chosenTestersList, "testers",
+                this.resRepo, this.employeesRepoComboBox);
+        if (id.equals("deleteAllManagers")) deleteAllEmployees(this.chosenManagersList, "managers",
                 this.resRepo, this.employeesRepoComboBox);
     }
     public void deleteAllEmployees(ListView<Employee> listView, String employees,
